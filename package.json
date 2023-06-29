@@ -1,0 +1,19 @@
+{
+  "name": "music-socket",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "concurrently \"nodemon server\" \"live-server client\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ws": "^8.13.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "live-server": "^1.2.2",
+    "nodemon": "^2.0.22"
+  }
+}
