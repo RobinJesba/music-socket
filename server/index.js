@@ -1,6 +1,35 @@
+const express = require("express");
+const os = require("os");
+const cors = require("cors");
 const WebSocket = require("ws");
 
-const wss = new WebSocket.Server({ port: 8081 });
+const app = express();
+const port = 8081;
+
+// Enable CORS for all routes
+app.use(cors());
+
+// Pass environment variables to the frontend
+app.get("/ip", (req, res) => {
+  const networkInterfaces = os.networkInterfaces();
+  let ipv4Address;
+  // Iterate over network interfaces
+  Object.keys(networkInterfaces).forEach((interfaceName) => {
+    // Iterate over addresses for the current network interface
+    networkInterfaces[interfaceName].forEach((address) => {
+      if (address.family === "IPv4" && !address.internal) {
+        ipv4Address = address.address;
+      }
+    });
+  });
+  res.json({ ip: ipv4Address });
+});
+
+const server = app.listen(port, () => {
+  console.log(`Express server running on port ${port}`);
+});
+
+const wss = new WebSocket.Server({ server });
 
 const clients = new Set();
 
@@ -31,4 +60,4 @@ wss.on("connection", (ws) => {
   });
 });
 
-console.log("WebSocket running on port 8081");
+console.log(`WebSocket running on port ${port}`);

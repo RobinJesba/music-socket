@@ -1,26 +1,30 @@
-const socket = new WebSocket("ws://192.168.29.2:8081");
+let socket;
 
-// Event handler for WebSocket connection open
-socket.onopen = () => {
-  console.log("Connected to the WebSocket server");
-};
-
-// Event handler for receiving messages from the server
-socket.onmessage = (event) => {
-  const message = JSON.parse(event.data);
-  console.log("receivin from server:", message);
-  if (message.type === "scale") {
-    updateToggle(message.isMinor);
-    renderChords(message.value, message.isMinor);
-  } else if (message.type === "progression") {
-    renderProgression(message.value);
-  }
-};
-
-// Event handler for WebSocket connection close
-socket.onclose = () => {
-  console.log("Disconnected from the WebSocket server");
-};
+fetch(`http://${location.hostname}:8081/ip`)
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+    socket = new WebSocket(`ws://${data.ip}:8081`);
+    // Event handler for WebSocket connection open
+    socket.onopen = () => {
+      console.log("Connected to the WebSocket server");
+    };
+    // Event handler for receiving messages from the server
+    socket.onmessage = (event) => {
+      const message = JSON.parse(event.data);
+      console.log("receivin from server:", message);
+      if (message.type === "scale") {
+        updateToggle(message.isMinor);
+        renderChords(message.value, message.isMinor);
+      } else if (message.type === "progression") {
+        renderProgression(message.value);
+      }
+    };
+    // Event handler for WebSocket connection close
+    socket.onclose = () => {
+      console.log("Disconnected from the WebSocket server");
+    };
+});
 
 function sendMessage(payload) {
   socket.send(JSON.stringify(payload));
