@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+    <script type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <div id="scales-container">
+      <h2>Scales</h2>
+      <span>Major</span>
+      <label class="switch">
+        <input type="checkbox" />
+        <span class="slider round"></span>
+      </label>
+      <span>Minor</span>
+      <br></br>
+      <h2 id="ThisChord" style="display: none"></h2>
+      <div id="scales">
+        <button class="button-27" role="button">C</button>
+        <button class="button-27" role="button">C#</button>
+        <button class="button-27" role="button">D</button>
+        <button class="button-27" role="button">Eb</button>
+        <button class="button-27" role="button">E</button>
+        <button class="button-27" role="button">F</button>
+        <button class="button-27" role="button">F#</button>
+        <button class="button-27" role="button">G</button>
+        <button class="button-27" role="button">G#</button>
+        <button class="button-27" role="button">A</button>
+        <button class="button-27" role="button">Bb</button>
+        <button class="button-27" role="button">B</button>
+      </div>
+    </div>
+    <div id="chords-container">
+      <h2 style="display: none">Chords</h2>
+      <div id="chords"><button style="display: none"></button></div>
+    </div>
+    <div id="progression-container">
+      <h2 style="display: none">Chords Progression</h2>
+      <div id="progression"></div>
+    </div>
+  </body>
+</html>
