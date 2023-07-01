@@ -149,7 +149,7 @@ h2 {
 }
 
 #textbox input[type="text"]:focus {
-  outline: 2px solid rgba(147, 0, 177, 0.3);
+  outline: 2px solid rgba(147, 0, 177, 0.6);
 }
 
 /* #scales-container span {
