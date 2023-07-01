@@ -6,6 +6,11 @@
     <title>Document</title>
     <link rel="stylesheet" href="./index.css" />
     <script type="module" src="./index.js"></script>
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
   </head>
   <body>
     <div id="scales-container">
@@ -16,8 +21,8 @@
         <span class="slider round"></span>
       </label>
       <span>Minor</span>
-      <br></br>
-      <h2 id="ThisChord" style="display: none"></h2>
+      <br />
+      <h2 id="ThisChord" class="hidden"></h2>
       <div id="scales">
         <button class="button-27" role="button">C</button>
         <button class="button-27" role="button">C#</button>
@@ -34,11 +39,13 @@
       </div>
     </div>
     <div id="chords-container">
-      <h2 style="display: none">Chords</h2>
-      <div id="chords"><button style="display: none"></button></div>
+      <h2 class="hidden">Chords</h2>
+      <div id="chords">
+        <button class="hidden" role="button"></button>
+      </div>
     </div>
     <div id="progression-container">
-      <h2 style="display: none">Chords Progression</h2>
+      <h2 class="hidden">Chord Progression</h2>
       <div id="progression"></div>
     </div>
   </body>
