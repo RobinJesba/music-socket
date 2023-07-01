@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+    <script type="module" src="./index.js"></script>
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="scales-container">
+      <div id="textbox">
+        <label for="my-textbox">Song&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input type="text" id="my-textbox" name="name" />
+        <br />
+        <label for="my-textbox">Beat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input type="text" id="my-textbox" name="name" />
+        <br />
+        <label for="my-textbox">Tempo&nbsp;&nbsp;</label>
+        <input type="number" id="my-textbox" name="name" />
+        <br />
+      </div>
+      <h2>Scales</h2>
+      <span>Major</span>
+      <label class="switch">
+        <input type="checkbox" />
+        <span class="slider round"></span>
+      </label>
+      <span>Minor</span>
+      <br />
+      <h2 id="ThisChord" class="hidden"></h2>
+      <div id="scales">
+        <button class="button-27" role="button">C</button>
+        <button class="button-27" role="button">C#</button>
+        <button class="button-27" role="button">D</button>
+        <button class="button-27" role="button">Eb</button>
+        <button class="button-27" role="button">E</button>
+        <button class="button-27" role="button">F</button>
+        <button class="button-27" role="button">F#</button>
+        <button class="button-27" role="button">G</button>
+        <button class="button-27" role="button">G#</button>
+        <button class="button-27" role="button">A</button>
+        <button class="button-27" role="button">Bb</button>
+        <button class="button-27" role="button">B</button>
+      </div>
+    </div>
+    <div id="chords-container">
+      <h2 class="hidden">Chords</h2>
+      <div id="chords">
+        <button class="hidden" role="button"></button>
+      </div>
+    </div>
+    <div id="progression-container">
+      <h2 class="hidden">Chord Progression</h2>
+      <div id="progression"></div>
+    </div>
+  </body>
+</html>
